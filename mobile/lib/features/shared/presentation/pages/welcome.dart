@@ -50,12 +50,8 @@ class _WelcomePageState extends State<WelcomePage> {
                 ),
               ),
             ),
-            PageIndicator(
-              count: _titles.length,
-              currentIndex: _currentPage,
-              color: context.colorScheme.onSurface.withOpacity(0.5),
-              activeColor: context.colorScheme.primary,
-            ).top(16),
+            PageIndicator(count: _titles.length, currentIndex: _currentPage)
+                .top(16),
             Expanded(
               flex: 2,
               child: Container(

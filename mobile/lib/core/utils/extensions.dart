@@ -61,20 +61,18 @@ extension BuildContextX on BuildContext {
                 child: Form(
                   key: formKey,
                   child: AnimatedListView(
+                    padding: const EdgeInsets.only(top: 24),
                     animateType: AnimateType.slideUp,
                     children: [
                       Assets.imgAppLogo
-                          .asAssetImage(
-                            height: height * 0.25,
-                            width: width * 0.7,
-                          )
+                          .asAssetImage(height: context.height * 0.1)
                           .centered(),
                       localizer.appName
                           .h5(this,
-                              weight: FontWeight.bold,
                               color: colorScheme.onSurface,
                               alignment: TextAlign.center)
-                          .centered(),
+                          .centered()
+                          .top(16),
                       localizer.signInWithEmail
                           .subtitle1(context)
                           .centered()
@@ -124,6 +122,79 @@ extension BuildContextX on BuildContext {
                       ),
                     ],
                   ).horizontal(24),
+                ),
+              )),
+    );
+  }
+
+  Future<String?> showPasswordSetupSheet(String fullName) async {
+    final formKey = GlobalKey<FormState>(),
+        confirmPasswordController = TextEditingController(),
+        passwordController = TextEditingController();
+
+    return await showBarModalBottomSheet(
+      context: this,
+      backgroundColor: colorScheme.background,
+      useRootNavigator: true,
+      bounce: true,
+      builder: (context) => StatefulBuilder(
+          builder: (context, setState) => Form(
+                key: formKey,
+                child: AnimatedListView(
+                  padding: const EdgeInsets.fromLTRB(24, 0, 24, 20),
+                  animateType: AnimateType.slideUp,
+                  children: [
+                    Assets.imgAppLogo.asAssetImage(
+                        height: height * 0.15, fit: BoxFit.contain),
+                    localizer
+                        .greetUser(fullName)
+                        .h5(this,
+                            weight: FontWeight.bold,
+                            color: colorScheme.onSurface,
+                            alignment: TextAlign.center)
+                        .centered()
+                        .bottom(8),
+                    localizer.createYourPassword
+                        .subtitle1(context)
+                        .centered()
+                        .bottom(24),
+                    AppTextField(
+                      localizer.password,
+                      controller: passwordController,
+                      textFieldType: AppTextFieldType.password,
+                      validator: (input) =>
+                          Validators.validatePassword(context, input),
+                      onChange: (input) {
+                        if (input == null) return;
+                      },
+                      floatLabel: true,
+                      prefixIcon: const Icon(Icons.password),
+                    ),
+                    AppTextField(
+                      localizer.confirmPassword,
+                      controller: confirmPasswordController,
+                      textFieldType: AppTextFieldType.password,
+                      validator: (input) => Validators.validatePassword(
+                          context, input, passwordController.text),
+                      onChange: (input) {
+                        if (input == null) return;
+                      },
+                      floatLabel: true,
+                      prefixIcon: const Icon(Icons.password),
+                    ),
+                    SafeArea(
+                      top: false,
+                      child: AppRoundedButton(
+                        backgroundColor: colorScheme.secondary,
+                        text: localizer.gotIt,
+                        onTap: () {
+                          if (formKey.currentState!.validate()) {
+                            context.navigator.pop(passwordController.text);
+                          }
+                        },
+                      ).centered().top(40),
+                    ),
+                  ],
                 ),
               )),
     );
@@ -249,6 +320,50 @@ extension BuildContextX on BuildContext {
                         ),
                         child: Icon(
                           TablerIcons.language,
+                          color: context.colorScheme.secondary,
+                        ),
+                      ),
+                      title: Text(e),
+                    ),
+                  )
+                  .toList(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  /// show a list of account types supported by the app
+  Future<String?> showAccountPickerBottomSheet() async {
+    var locales = [localizer.individual, localizer.agent];
+    return await showBarModalBottomSheet(
+      context: this,
+      builder: (context) => StatefulBuilder(
+        builder: (context, setState) => SafeArea(
+          top: false,
+          child: ListView(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            padding: const EdgeInsets.fromLTRB(24, 24, 24, 16),
+            children: [
+              localizer.accountType.subtitle1(context).bottom(16),
+              ...locales
+                  .map(
+                    (e) => ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      onTap: () => context.navigator.pop(e),
+                      minLeadingWidth: 48,
+                      leading: Container(
+                        width: 48,
+                        height: 48,
+                        decoration: BoxDecoration(
+                          color:
+                              (context.colorScheme.secondary).withOpacity(0.1),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          TablerIcons.user_exclamation,
                           color: context.colorScheme.secondary,
                         ),
                       ),

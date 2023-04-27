@@ -5,6 +5,7 @@ import 'package:mobile/features/onboarding/presentation/pages/login.dart';
 import 'package:mobile/features/onboarding/presentation/pages/phone.verification.dart';
 import 'package:mobile/features/onboarding/presentation/pages/register.dart';
 import 'package:mobile/features/real_estate/presentation/pages/dashboard.dart';
+import 'package:mobile/features/real_estate/presentation/pages/estate.details.dart';
 import 'package:mobile/features/shared/presentation/pages/welcome.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:shared_utils/shared_utils.dart';
@@ -19,7 +20,7 @@ class AppRouterConfig {
       case AppRouter.loginRoute:
         return MaterialWithModalsPageRoute(
             builder: (_) => const LoginPage(), settings: settings);
-        case AppRouter.registerRoute:
+      case AppRouter.registerRoute:
         return MaterialWithModalsPageRoute(
             builder: (_) => const RegisterAccountPage(), settings: settings);
       case AppRouter.phoneVerificationRoute:
@@ -38,6 +39,11 @@ class AppRouterConfig {
       case AppRouter.dashboardRoute:
         return MaterialWithModalsPageRoute(
             builder: (_) => const DashboardPage(), settings: settings);
+      case AppRouter.estateDetailsRoute:
+        return MaterialWithModalsPageRoute(
+            builder: (_) =>
+                EstateDetailsPage(image: settings.arguments as String),
+            settings: settings);
 
       /// endregion shared
     }
@@ -63,5 +69,6 @@ class AppRouter {
   static const registerRoute = '/register'; // todo
   static const dashboardRoute = '/dashboard'; // todo
   static const phoneVerificationRoute = '/phone-verification'; // todo
+  static const estateDetailsRoute = '/estate-details'; // todo
   static const chatRoute = '/chat'; // todo
 }

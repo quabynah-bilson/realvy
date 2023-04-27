@@ -1251,7 +1251,7 @@
         <entry key="shared_utils">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/git/shared_utils-4fdebd11a5347cd586073e070d1ebd61b72ae36e//lib" />
+              <option value="$USER_HOME$/.pub-cache/git/shared_utils-536f3b7d2737589d010d58257bcbdd7b148c807c//lib" />
             </list>
           </value>
         </entry>
@@ -1658,7 +1658,7 @@
     </properties>
     <CLASSES>
       <root url="file://$USER_HOME$/.pub-cache/git/modal_bottom_sheet-3e8c3682be91a4a86ee73f39606901d5eb033f0b/modal_bottom_sheet/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/git/shared_utils-4fdebd11a5347cd586073e070d1ebd61b72ae36e//lib" />
+      <root url="file://$USER_HOME$/.pub-cache/git/shared_utils-536f3b7d2737589d010d58257bcbdd7b148c807c//lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/_fe_analyzer_shared-59.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/analyzer-5.11.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/animated_bottom_navigation_bar-1.2.0/lib" />

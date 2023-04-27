@@ -12,7 +12,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  var _loading = false;
+  final _loading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +27,8 @@ class _LoginPageState extends State<LoginPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Assets.imgAppLogo.asAssetImage(height: context.height * 0.25),
-            context.localizer.appName.h5(context),
+            Assets.imgAppLogo.asAssetImage(height: context.height * 0.15),
+            context.localizer.appName.h5(context).top(16),
             context.localizer.appDesc.subtitle1(context).top(16),
             const SizedBox(height: 40),
             AppRoundedButton(

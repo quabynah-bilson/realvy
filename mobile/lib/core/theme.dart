@@ -22,8 +22,8 @@ extension ThemeBuilderX on BuildContext {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
         ),
-        appBarTheme: const AppBarTheme(
-            backgroundColor: backgroundColor,
+        appBarTheme: AppBarTheme(
+            backgroundColor: backgroundColor.withOpacity(0),
             elevation: 0,
             scrolledUnderElevation: 0),
         textTheme: _textTheme());
@@ -45,6 +45,7 @@ ColorScheme useColorScheme([ThemeMode mode = ThemeMode.light]) =>
             onBackground: Color(0xff020f27),
             onPrimary: Colors.white,
             primary: Color(0xff020f27),
+            // secondary: Color(0xff0FA23B),
             secondary: Color(0xff117ff5),
             onSecondary: Colors.white,
             surface: Color(0xfff6f6f6),
@@ -53,8 +54,8 @@ ColorScheme useColorScheme([ThemeMode mode = ThemeMode.light]) =>
             onError: Colors.white,
             errorContainer: Colors.pink,
             onErrorContainer: Colors.white,
-            tertiary: Color(0xff322261),
-            onTertiary: Colors.white,
+            tertiary: Color(0xffEEC846),
+            onTertiary: Colors.black,
             secondaryContainer: Color(0xffD5E048),
             onSecondaryContainer: Colors.black,
           )
@@ -96,7 +97,7 @@ TextTheme _textTheme([Color textColor = Colors.black]) => TextTheme(
           fontSize: 17,
           fontWeight: FontWeight.w400,
           letterSpacing: 0.15),
-      titleSmall: _primaryFont(
+      titleSmall: _secondaryFont(
           color: textColor,
           fontSize: 15,
           fontWeight: FontWeight.w500,

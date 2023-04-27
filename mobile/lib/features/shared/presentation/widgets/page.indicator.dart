@@ -4,15 +4,15 @@ import 'package:shared_utils/shared_utils.dart';
 class PageIndicator extends StatelessWidget {
   final int count;
   final int currentIndex;
-  final Color color;
-  final Color activeColor;
+  final Color? color;
+  final Color? activeColor;
 
   const PageIndicator({
     Key? key,
     required this.count,
     required this.currentIndex,
-    required this.color,
-    required this.activeColor,
+    this.color,
+    this.activeColor,
   }) : super(key: key);
 
   @override
@@ -26,7 +26,10 @@ class PageIndicator extends StatelessWidget {
             height: 4,
             margin: const EdgeInsets.symmetric(horizontal: 4),
             decoration: BoxDecoration(
-              color: index == currentIndex ? activeColor : color,
+              color: index == currentIndex
+                  ? (activeColor ?? context.colorScheme.secondary)
+                  : (color ?? context.colorScheme.onBackground)
+                      .withOpacity(kEmphasisLow),
               borderRadius: BorderRadius.circular(4),
             ),
           ),
