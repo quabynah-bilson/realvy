@@ -1,0 +1,114 @@
+name: mobile
+description: A real estate app for the modern age. Built with Flutter.
+publish_to: 'none'
+
+version: 0.0.0-pilot+0
+
+environment:
+  sdk: '>=2.19.6 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  grpc: ^3.1.0
+  protobuf: ^2.1.0
+  protobuf_google: ^0.0.1
+  google_maps_flutter: ^2.2.5
+  injectable: ^2.1.1
+  get_it: ^7.2.0
+  bloc: ^8.1.1
+  flutter_bloc: ^8.1.2
+  modal_bottom_sheet:
+    git:
+      url: https://github.com/followthemoney1/modal_bottom_sheet.git
+      ref: main
+      path: modal_bottom_sheet
+  pinput: ^2.2.31
+  dartz: ^0.10.1
+  lottie: ^2.3.2
+  google_fonts: ^4.0.3
+  flutter_secure_storage: ^8.0.0
+  device_info_plus: ^8.2.0
+  shared_utils:
+    git: https://github.com/quabynah-bilson/shared_utils.git
+  intl: any
+  local_auth: ^2.1.6
+  flutter_dotenv: ^5.0.2
+  url_launcher: ^6.1.10
+  animated_bottom_navigation_bar: ^1.2.0
+  google_maps_webservice: ^0.0.19
+  geolocator: ^9.0.2
+  sentry_flutter: ^7.4.2
+  geocoding: ^2.1.0
+  package_info_plus: ^3.1.0
+  geofence_service: ^3.5.0
+  flutter_local_notifications: ^14.0.0
+  webview_flutter_plus: ^0.3.0+2
+  flutter_staggered_animations: ^1.1.1
+  flutter_staggered_grid_view: ^0.6.2
+  image_picker: ^0.8.7+4
+  image_cropper: ^3.0.2
+  timeago: ^3.3.0
+  share_plus: ^6.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  build_runner: ^2.3.3
+  injectable_generator: ^2.1.5
+  flutter_launcher_icons: ^0.13.0
+  flutter_native_splash: ^2.2.19
+  mocktail: ^0.3.0
+  change_app_package_name: ^1.1.0
+  integration_test:
+    sdk: flutter
+
+flutter:
+  generate: true
+  uses-material-design: true
+  assets:
+    - assets/anim/
+    - assets/img/
+    - .env
+
+
+# flutter pub run flutter_launcher_icons
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/img/app_logo.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/img/app_logo.png"
+    background_color: "#FFE7AB"
+    theme_color: "#FFE7AB"
+  windows:
+    generate: true
+    image_path: "assets/img/app_logo.png"
+    icon_size: 56 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/img/app_logo.png"
+
+# flutter pub run flutter_native_splash:create
+flutter_native_splash:
+  image: assets/img/app_logo.png
+  image_dark: assets/img/app_logo.png
+  icon_background_color: "#ffffff"
+  color: "#ffffff"
+  color_dark: "#ffffff"
+  icon_background_color_dark: "#ffffff"
+  web: false
+  web_image_mode: contain
+  android_12:
+    image: assets/img/app_logo.png
+    color: "#ffffff"
+    icon_background_color: "#ffffff"
+    icon_background_color_dark: "#ffffff"
+    color_dark: "#ffffff"
+    image_dark: assets/img/app_logo.png
