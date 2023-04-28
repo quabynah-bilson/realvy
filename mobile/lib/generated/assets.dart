@@ -22,6 +22,9 @@ class Assets {
   static const String imgHouseInterior2 = 'assets/img/house_interior_2.webp';
   static const String imgHouseInterior3 = 'assets/img/house_interior_3.webp';
   static const String imgLauncherIcon = 'assets/img/launcher_icon.png';
+  static const String imgOb1 = 'assets/img/ob_1.webp';
+  static const String imgOb2 = 'assets/img/ob_2.webp';
+  static const String imgOb3 = 'assets/img/ob_3.webp';
   static const String mobile = '.env';
 
 }

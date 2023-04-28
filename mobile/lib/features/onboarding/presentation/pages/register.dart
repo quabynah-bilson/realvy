@@ -55,7 +55,9 @@ class _RegisterAccountPageState extends State<RegisterAccountPage> {
                         ],
                       ),
                     ),
-                    Assets.imgAppLogo.asAssetImage(size: context.width * 0.2),
+                    Assets.imgAppLogo
+                        .asAssetImage(height: context.height * 0.05)
+                        .centered(),
                   ],
                 ).bottom(40),
               ),

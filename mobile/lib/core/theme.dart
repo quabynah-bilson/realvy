@@ -11,11 +11,12 @@ extension ThemeBuilderX on BuildContext {
         disabledColor: const Color(0xffe0e0e0),
         colorScheme: colorScheme,
         platform: TargetPlatform.iOS,
+        popupMenuTheme: PopupMenuThemeData(
+            color: colorScheme.background,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
         dividerTheme: DividerThemeData(
-            color: colorScheme.surface,
-            indent: 24,
-            endIndent: 24,
-            space: 24),
+            color: colorScheme.surface, indent: 24, endIndent: 24, space: 24),
         floatingActionButtonTheme: FloatingActionButtonThemeData(
           backgroundColor: colorScheme.secondary,
           foregroundColor: colorScheme.onSecondary,
@@ -64,8 +65,7 @@ ColorScheme useColorScheme([ThemeMode mode = ThemeMode.light]) =>
           );
 
 /// setup font
-const _primaryFont = GoogleFonts.dmSans,
-    _secondaryFont = GoogleFonts.rubik;
+const _primaryFont = GoogleFonts.dmSans, _secondaryFont = GoogleFonts.dmSans;
 
 TextTheme _textTheme([Color textColor = Colors.black]) => TextTheme(
       displayLarge: _primaryFont(

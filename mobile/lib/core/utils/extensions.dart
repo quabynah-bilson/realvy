@@ -141,11 +141,12 @@ extension BuildContextX on BuildContext {
           builder: (context, setState) => Form(
                 key: formKey,
                 child: AnimatedListView(
-                  padding: const EdgeInsets.fromLTRB(24, 0, 24, 20),
+                  padding: const EdgeInsets.fromLTRB(24, 24, 24, 20),
                   animateType: AnimateType.slideUp,
                   children: [
-                    Assets.imgAppLogo.asAssetImage(
-                        height: height * 0.15, fit: BoxFit.contain),
+                    Assets.imgAppLogo
+                        .asAssetImage(height: context.height * 0.05)
+                        .centered(),
                     localizer
                         .greetUser(fullName)
                         .h5(this,
@@ -153,7 +154,7 @@ extension BuildContextX on BuildContext {
                             color: colorScheme.onSurface,
                             alignment: TextAlign.center)
                         .centered()
-                        .bottom(8),
+                        .vertical(8),
                     localizer.createYourPassword
                         .subtitle1(context)
                         .centered()

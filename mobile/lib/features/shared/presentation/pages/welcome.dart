@@ -24,9 +24,9 @@ class _WelcomePageState extends State<WelcomePage> {
         context.localizer.onboarding_3_subhead,
       ];
   final _images = [
-        Assets.imgApartments1,
-        Assets.imgApartments2,
-        Assets.imgApartments3,
+        Assets.imgOb1,
+        Assets.imgOb2,
+        Assets.imgOb3,
       ],
       _pageController = PageController();
   var _currentPage = 0;
@@ -43,10 +43,9 @@ class _WelcomePageState extends State<WelcomePage> {
                 physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) => Container(
                   decoration: BoxDecoration(
-                    color: context.colorScheme.surface,
+                    color: context.colorScheme.background,
                   ),
-                  // TODO render screenshots from assets
-                  // child: _images[index].asAssetImage(),
+                  child: _images[index].asAssetImage(),
                 ),
               ),
             ),

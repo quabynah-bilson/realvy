@@ -117,6 +117,17 @@
   "featured": "En vedette",
   "forSale": "À vendre",
   "trending": "Tendance",
-  "monthlyExpenses" : "Dépenses mensuelles",
-  "month" : "Mois"
+  "monthlyExpenses": "Dépenses mensuelles",
+  "month": "Mois",
+  "principal": "Principal",
+  "propertyTax": "Taxe foncière",
+  "homeInsurance": "Assurance habitation",
+  "buyWithPrice": "Acheter avec un prix",
+  "discuss": "Discuter",
+  "survey": "Enquête",
+  "recentlyActive": "Récemment actif",
+  "typeMessage": "Tapez votre message",
+  "scheduleSurvey": "Planifier une enquête",
+  "makeOffer": "Faire une offre",
+  "uploadMedia": "Télécharger des médias"
 }
